@@ -10,12 +10,16 @@ import CoreData
 
 @main
 struct ToDoTestAPICoreDataApp: App {
+    @StateObject var vm = ViewModelAPI()
     let persistenceController = CoreDataManager.shared
+    @AppStorage("isDarkMode") private var isDarkMode = true
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
                 .environment(\.managedObjectContext, persistenceController.context)
+                .environmentObject(vm)
         }
     }
 }

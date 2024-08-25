@@ -74,7 +74,7 @@ import CoreData
          todos.forEach { todo in
              let entity = TodoEntity(context: coreDataManager.context)
              entity.id = Int64(todo.id)
-             entity.todo = todo.todo
+             entity.todo = todo.title
              entity.competed = todo.completed
              entity.userId = Int64(todo.userId)
          }

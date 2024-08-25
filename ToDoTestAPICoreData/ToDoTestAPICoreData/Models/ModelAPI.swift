@@ -7,14 +7,23 @@
 
 import Foundation
 
-struct ModelAPI: Codable, Identifiable {
+
+
+struct ModelAPI: Decodable, Identifiable {
     let id: Int
-    let todo: String
+    let title: String
     let completed: Bool
     let userId: Int
+    
+    enum CodingKeys: String, CodingKey {
+          case id
+          case title = "todo"
+          case completed
+          case userId
+      }
 }
 
-struct TodoResponse: Codable {
+struct TodoResponse: Decodable {
     let todos: [ModelAPI]
     let total: Int
     let skip: Int
