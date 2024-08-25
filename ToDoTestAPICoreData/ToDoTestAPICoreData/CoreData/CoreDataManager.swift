@@ -9,8 +9,9 @@ import Foundation
 import CoreData
 
 
-final class CoreDataManager {
+ final class CoreDataManager {
     static let shared = CoreDataManager()
+    
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TodoDataModel")
@@ -37,4 +38,6 @@ final class CoreDataManager {
             }
         }
     }
+     
+     
 }
