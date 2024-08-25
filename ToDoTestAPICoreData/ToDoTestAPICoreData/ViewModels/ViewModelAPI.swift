@@ -9,20 +9,23 @@ import Foundation
 import CoreData
 
  class ViewModelAPI: ObservableObject {
-    
-    @Published var todos: [TodoEntity] = []
+     
+     @Published var tasks: [TodoEntity] = []
+     private var coreDataManager = CoreDataManager.shared
+     
      
      init() {
          fetchTodosFromCoreData()
      }
     
+     
     func fetchTodosFromAPI() {
         guard let url = URL(string: "https://dummyjson.com/todos") else {
             print("Invalid URL")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) {[weak self] data, response, error in
             if let error = error {
                 print("Error fetching todos: \(error)")
                 return
@@ -40,7 +43,7 @@ import CoreData
             do {
                 let todoResponse = try JSONDecoder().decode(TodoResponse.self, from: data)
                 DispatchQueue.main.async{
-                   
+                    self?.saveTodosCoreData(todos: todoResponse.todos)
                 }
             } catch {
                 print("Error decoding todos: \(error)")
@@ -52,22 +55,31 @@ import CoreData
      func fetchTodosFromCoreData() {
          let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
          do {
-             todos = try CoreDataManager.shared.context.fetch(request)
+             tasks = try coreDataManager.context.fetch(request)
          } catch  {
              print("Error fetching todos from CoreData: \(error)")
          }
      }
      
+     func deleteTask(at offsets: IndexSet) {
+         offsets.forEach { index in
+             let task = tasks[index]
+             coreDataManager.context.delete(task)
+         }
+         coreDataManager.saveContext()
+         fetchTodosFromCoreData()
+     }
+     
      func saveTodosCoreData(todos: [ModelAPI]){
          todos.forEach { todo in
-             let entity = TodoEntity(context: CoreDataManager.shared.context)
+             let entity = TodoEntity(context: coreDataManager.context)
              entity.id = Int64(todo.id)
              entity.todo = todo.todo
              entity.competed = todo.completed
              entity.userId = Int64(todo.userId)
          }
          
-         CoreDataManager.shared.saveContext()
+         coreDataManager.saveContext()
          fetchTodosFromCoreData()
      }
      

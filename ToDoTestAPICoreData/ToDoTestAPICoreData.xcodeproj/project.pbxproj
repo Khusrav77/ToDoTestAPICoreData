@@ -15,6 +15,8 @@
 		A492E3E12C7B13B300610C99 /* ViewModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E02C7B13B300610C99 /* ViewModelAPI.swift */; };
 		A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */; };
 		A492E3E72C7B214C00610C99 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E62C7B214C00610C99 /* CoreDataManager.swift */; };
+		A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E92C7B2DE300610C99 /* MainView.swift */; };
+		A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3EC2C7B43F700610C99 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		A492E3E02C7B13B300610C99 /* ViewModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAPI.swift; sourceTree = "<group>"; };
 		A492E3E42C7B1FCC00610C99 /* TodoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A492E3E62C7B214C00610C99 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A492E3E92C7B2DE300610C99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A492E3EC2C7B43F700610C99 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +63,11 @@
 		A492E3CD2C7B0E5E00610C99 /* ToDoTestAPICoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A492E3E82C7B2DAB00610C99 /* Views */,
 				A492E3DF2C7B135A00610C99 /* ViewModels */,
 				A492E3DC2C7B0FDC00610C99 /* Models */,
 				A492E3E22C7B1F6200610C99 /* CoreData */,
+				A492E3EB2C7B439200610C99 /* Extensions */,
 				A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */,
 				A492E3D02C7B0E5E00610C99 /* ContentView.swift */,
 				A492E3D22C7B0E5F00610C99 /* Assets.xcassets */,
@@ -101,6 +107,22 @@
 				A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A492E3E82C7B2DAB00610C99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A492E3E92C7B2DE300610C99 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A492E3EB2C7B439200610C99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A492E3EC2C7B43F700610C99 /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,11 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A492E3E72C7B214C00610C99 /* CoreDataManager.swift in Sources */,
+				A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */,
 				A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */,
 				A492E3DE2C7B102400610C99 /* ModelAPI.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
 				A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */,
 				A492E3E12C7B13B300610C99 /* ViewModelAPI.swift in Sources */,
+				A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
