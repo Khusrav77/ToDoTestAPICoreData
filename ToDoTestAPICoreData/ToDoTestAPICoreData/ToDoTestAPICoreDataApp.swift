@@ -10,7 +10,7 @@ import CoreData
 
 @main
 struct ToDoTestAPICoreDataApp: App {
-    @StateObject var vm = ViewModelAPI()
+    @StateObject var vm = APIViewModel()
     let persistenceController = CoreDataManager.shared
     @AppStorage("isDarkMode") private var isDarkMode = true
     

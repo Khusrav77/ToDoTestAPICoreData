@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct ModelAPI: Decodable, Identifiable {
+struct APIModel: Decodable, Identifiable {
     let id: Int
     let title: String
     let completed: Bool
@@ -24,7 +24,7 @@ struct ModelAPI: Decodable, Identifiable {
 }
 
 struct TodoResponse: Decodable {
-    let todos: [ModelAPI]
+    let todos: [APIModel]
     let total: Int
     let skip: Int
     let limit: Int

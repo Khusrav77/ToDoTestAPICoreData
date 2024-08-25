@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject  var vm: ViewModelAPI
+    @EnvironmentObject  var vm: APIViewModel
    
     var body: some View {
         NavigationView {
@@ -39,5 +39,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .preferredColorScheme(.dark)
-        .environmentObject(ViewModelAPI())
+        .environmentObject(APIViewModel())
 }

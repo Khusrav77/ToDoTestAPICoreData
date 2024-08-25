@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
- class ViewModelAPI: ObservableObject {
+ class APIViewModel: ObservableObject {
      
      @Published var tasks: [TodoEntity] = []
      private var coreDataManager = CoreDataManager.shared
@@ -43,7 +43,7 @@ import CoreData
             do {
                 let todoResponse = try JSONDecoder().decode(TodoResponse.self, from: data)
                 DispatchQueue.main.async{
-                    self?.saveTodosCoreData(todos: todoResponse.todos)
+                    self?.saveTodosCoreData(tasks: todoResponse.todos)
                 }
             } catch {
                 print("Error decoding todos: \(error)")
@@ -61,24 +61,25 @@ import CoreData
          }
      }
      
+     
+     func saveTodosCoreData(tasks: [APIModel]){
+         tasks.forEach { task in
+             let entity = TodoEntity(context: coreDataManager.context)
+             entity.id = Int64(task.id)
+             entity.todo = task.title
+             entity.competed = task.completed
+             entity.userId = Int64(task.userId)
+         }
+         
+         coreDataManager.saveContext()
+         fetchTodosFromCoreData()
+     }
+     
      func deleteTask(at offsets: IndexSet) {
          offsets.forEach { index in
              let task = tasks[index]
              coreDataManager.context.delete(task)
          }
-         coreDataManager.saveContext()
-         fetchTodosFromCoreData()
-     }
-     
-     func saveTodosCoreData(todos: [ModelAPI]){
-         todos.forEach { todo in
-             let entity = TodoEntity(context: coreDataManager.context)
-             entity.id = Int64(todo.id)
-             entity.todo = todo.title
-             entity.competed = todo.completed
-             entity.userId = Int64(todo.userId)
-         }
-         
          coreDataManager.saveContext()
          fetchTodosFromCoreData()
      }

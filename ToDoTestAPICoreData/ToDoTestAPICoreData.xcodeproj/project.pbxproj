@@ -11,15 +11,15 @@
 		A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3D02C7B0E5E00610C99 /* ContentView.swift */; };
 		A492E3D32C7B0E5F00610C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A492E3D22C7B0E5F00610C99 /* Assets.xcassets */; };
 		A492E3D62C7B0E5F00610C99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A492E3D52C7B0E5F00610C99 /* Preview Assets.xcassets */; };
-		A492E3DE2C7B102400610C99 /* ModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3DD2C7B102400610C99 /* ModelAPI.swift */; };
-		A492E3E12C7B13B300610C99 /* ViewModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E02C7B13B300610C99 /* ViewModelAPI.swift */; };
+		A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3DD2C7B102400610C99 /* APIModel.swift */; };
+		A492E3E12C7B13B300610C99 /* APIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E02C7B13B300610C99 /* APIViewModel.swift */; };
 		A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */; };
 		A492E3E72C7B214C00610C99 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E62C7B214C00610C99 /* CoreDataManager.swift */; };
 		A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E92C7B2DE300610C99 /* MainView.swift */; };
 		A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3EC2C7B43F700610C99 /* Color+Extension.swift */; };
 		A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */; };
 		A492E3F42C7B4ED700610C99 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F32C7B4ED700610C99 /* TaskCellView.swift */; };
-		A492E3F62C7B79EA00610C99 /* ModelLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F52C7B79EA00610C99 /* ModelLocal.swift */; };
+		A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F72C7B989500610C99 /* LocalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,15 +28,15 @@
 		A492E3D02C7B0E5E00610C99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A492E3D22C7B0E5F00610C99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A492E3D52C7B0E5F00610C99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A492E3DD2C7B102400610C99 /* ModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAPI.swift; sourceTree = "<group>"; };
-		A492E3E02C7B13B300610C99 /* ViewModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAPI.swift; sourceTree = "<group>"; };
+		A492E3DD2C7B102400610C99 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		A492E3E02C7B13B300610C99 /* APIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewModel.swift; sourceTree = "<group>"; };
 		A492E3E42C7B1FCC00610C99 /* TodoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A492E3E62C7B214C00610C99 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A492E3E92C7B2DE300610C99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A492E3EC2C7B43F700610C99 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewGradient.swift; sourceTree = "<group>"; };
 		A492E3F32C7B4ED700610C99 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
-		A492E3F52C7B79EA00610C99 /* ModelLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLocal.swift; sourceTree = "<group>"; };
+		A492E3F72C7B989500610C99 /* LocalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,7 @@
 		A492E3DC2C7B0FDC00610C99 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3DD2C7B102400610C99 /* ModelAPI.swift */,
-				A492E3F52C7B79EA00610C99 /* ModelLocal.swift */,
+				A492E3DD2C7B102400610C99 /* APIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,7 +102,8 @@
 		A492E3DF2C7B135A00610C99 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3E02C7B13B300610C99 /* ViewModelAPI.swift */,
+				A492E3E02C7B13B300610C99 /* APIViewModel.swift */,
+				A492E3F72C7B989500610C99 /* LocalViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -232,11 +232,11 @@
 				A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */,
 				A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */,
 				A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */,
-				A492E3DE2C7B102400610C99 /* ModelAPI.swift in Sources */,
-				A492E3F62C7B79EA00610C99 /* ModelLocal.swift in Sources */,
+				A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */,
+				A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
 				A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */,
-				A492E3E12C7B13B300610C99 /* ViewModelAPI.swift in Sources */,
+				A492E3E12C7B13B300610C99 /* APIViewModel.swift in Sources */,
 				A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */,
 				A492E3F42C7B4ED700610C99 /* TaskCellView.swift in Sources */,
 			);
