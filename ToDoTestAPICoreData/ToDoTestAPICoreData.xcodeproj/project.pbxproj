@@ -10,6 +10,7 @@
 		A464562E2C7D04D0008586AD /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464562D2C7D04D0008586AD /* AddTaskView.swift */; };
 		A46456302C7D069A008586AD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464562F2C7D069A008586AD /* CustomButton.swift */; };
 		A46456322C7D07A9008586AD /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46456312C7D07A9008586AD /* CustomTextField.swift */; };
+		A46456342C7D105A008586AD /* NoTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46456332C7D105A008586AD /* NoTaskView.swift */; };
 		A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */; };
 		A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3D02C7B0E5E00610C99 /* ContentView.swift */; };
 		A492E3D32C7B0E5F00610C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A492E3D22C7B0E5F00610C99 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		A464562D2C7D04D0008586AD /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		A464562F2C7D069A008586AD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A46456312C7D07A9008586AD /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A46456332C7D105A008586AD /* NoTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTaskView.swift; sourceTree = "<group>"; };
 		A492E3CB2C7B0E5E00610C99 /* ToDoTestAPICoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoTestAPICoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTestAPICoreDataApp.swift; sourceTree = "<group>"; };
 		A492E3D02C7B0E5E00610C99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				A464562D2C7D04D0008586AD /* AddTaskView.swift */,
+				A46456332C7D105A008586AD /* NoTaskView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */,
 				A46456302C7D069A008586AD /* CustomButton.swift in Sources */,
 				A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */,
+				A46456342C7D105A008586AD /* NoTaskView.swift in Sources */,
 				A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */,
 				A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
