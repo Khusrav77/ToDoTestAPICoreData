@@ -15,11 +15,12 @@
 		A492E3E12C7B13B300610C99 /* APIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E02C7B13B300610C99 /* APIViewModel.swift */; };
 		A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */; };
 		A492E3E72C7B214C00610C99 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E62C7B214C00610C99 /* CoreDataManager.swift */; };
-		A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E92C7B2DE300610C99 /* MainView.swift */; };
+		A492E3EA2C7B2DE300610C99 /* APITaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3E92C7B2DE300610C99 /* APITaskView.swift */; };
 		A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3EC2C7B43F700610C99 /* Color+Extension.swift */; };
 		A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */; };
-		A492E3F42C7B4ED700610C99 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F32C7B4ED700610C99 /* TaskCellView.swift */; };
 		A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F72C7B989500610C99 /* LocalViewModel.swift */; };
+		A492E3FA2C7BBA9700610C99 /* LocalTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F92C7BBA9700610C99 /* LocalTaskView.swift */; };
+		A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +33,12 @@
 		A492E3E02C7B13B300610C99 /* APIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewModel.swift; sourceTree = "<group>"; };
 		A492E3E42C7B1FCC00610C99 /* TodoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A492E3E62C7B214C00610C99 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		A492E3E92C7B2DE300610C99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A492E3E92C7B2DE300610C99 /* APITaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITaskView.swift; sourceTree = "<group>"; };
 		A492E3EC2C7B43F700610C99 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewGradient.swift; sourceTree = "<group>"; };
-		A492E3F32C7B4ED700610C99 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		A492E3F72C7B989500610C99 /* LocalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewModel.swift; sourceTree = "<group>"; };
+		A492E3F92C7BBA9700610C99 /* LocalTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskView.swift; sourceTree = "<group>"; };
+		A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasklCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A46456272C7CAF0A008586AD /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
 		A492E3C22C7B0E5E00610C99 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +122,7 @@
 			children = (
 				A492E3E62C7B214C00610C99 /* CoreDataManager.swift */,
 				A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */,
+				A46456272C7CAF0A008586AD /* APIService */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -136,6 +146,7 @@
 		A492E3EE2C7B4C9000610C99 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */,
 				A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */,
 			);
 			path = UIComponents;
@@ -144,8 +155,8 @@
 		A492E3F12C7B4E4900610C99 /* TasksView */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3E92C7B2DE300610C99 /* MainView.swift */,
-				A492E3F22C7B4E9600610C99 /* Subviews */,
+				A492E3FC2C7BC32E00610C99 /* LocalView */,
+				A492E3FB2C7BC2D100610C99 /* APIView */,
 			);
 			path = TasksView;
 			sourceTree = "<group>";
@@ -153,9 +164,33 @@
 		A492E3F22C7B4E9600610C99 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3F32C7B4ED700610C99 /* TaskCellView.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A492E3FB2C7BC2D100610C99 /* APIView */ = {
+			isa = PBXGroup;
+			children = (
+				A492E3E92C7B2DE300610C99 /* APITaskView.swift */,
+				A492E3F22C7B4E9600610C99 /* Subviews */,
+			);
+			path = APIView;
+			sourceTree = "<group>";
+		};
+		A492E3FC2C7BC32E00610C99 /* LocalView */ = {
+			isa = PBXGroup;
+			children = (
+				A492E3F92C7BBA9700610C99 /* LocalTaskView.swift */,
+				A492E3FD2C7BC34800610C99 /* SubViews */,
+			);
+			path = LocalView;
+			sourceTree = "<group>";
+		};
+		A492E3FD2C7BC34800610C99 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,16 +264,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A492E3E72C7B214C00610C99 /* CoreDataManager.swift in Sources */,
-				A492E3EA2C7B2DE300610C99 /* MainView.swift in Sources */,
+				A492E3EA2C7B2DE300610C99 /* APITaskView.swift in Sources */,
 				A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */,
 				A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */,
 				A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */,
 				A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */,
+				A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
 				A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */,
 				A492E3E12C7B13B300610C99 /* APIViewModel.swift in Sources */,
 				A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */,
-				A492E3F42C7B4ED700610C99 /* TaskCellView.swift in Sources */,
+				A492E3FA2C7BBA9700610C99 /* LocalTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +496,7 @@
 				A492E3E42C7B1FCC00610C99 /* TodoDataModel.xcdatamodel */,
 			);
 			currentVersion = A492E3E42C7B1FCC00610C99 /* TodoDataModel.xcdatamodel */;
-			name = TodoDataModel.xcdatamodeld;
-			path = /Users/khusravsafiev/GitProjects/ToDoTestAPICoreData/ToDoTestAPICoreData/ToDoTestAPICoreData/CoreData/TodoDataModel.xcdatamodeld;
+			path = TodoDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
