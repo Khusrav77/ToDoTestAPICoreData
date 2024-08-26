@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocalTaskView: View {
-    @ObservedObject var vm = LocalViewModel()
+    @EnvironmentObject var vm: LocalViewModel
     var body: some View {
         
         ZStack {
@@ -42,5 +42,6 @@ struct LocalTaskView: View {
 #Preview {
     LocalTaskView()
         .preferredColorScheme(.dark)
+        .environmentObject(LocalViewModel())
     
 }
