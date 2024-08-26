@@ -10,7 +10,7 @@ import CoreData
 
  class APIViewModel: ObservableObject {
      
-     @Published var tasks: [TodoEntity] = []
+     @Published var tasks: [APITaskEntity] = []
      private var coreDataManager = CoreDataManager.shared
      
      
@@ -53,7 +53,7 @@ import CoreData
     }
      
      func fetchTodosFromCoreData() {
-         let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
+         let request: NSFetchRequest<APITaskEntity> = APITaskEntity.fetchRequest()
          do {
              tasks = try coreDataManager.context.fetch(request)
          } catch  {
@@ -64,10 +64,10 @@ import CoreData
      
      func saveTodosCoreData(tasks: [APIModel]){
          tasks.forEach { task in
-             let entity = TodoEntity(context: coreDataManager.context)
+             let entity = APITaskEntity(context: coreDataManager.context)
              entity.id = Int64(task.id)
              entity.todo = task.title
-             entity.competed = task.completed
+             entity.completed = task.completed
              entity.userId = Int64(task.userId)
          }
          
