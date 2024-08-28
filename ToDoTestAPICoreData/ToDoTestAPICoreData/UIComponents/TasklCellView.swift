@@ -21,8 +21,11 @@ struct TasklCellView: View {
                 Text(title)
                     .strikethrough()
                     .foregroundStyle(Color.tdPrimary.opacity(0.5))
+                Divider()
             } else {
                 Text(title)
+                Divider()
+                    .background(.white)
             }
             
             HStack {
@@ -44,12 +47,17 @@ struct TasklCellView: View {
                     
                 }
             }
-            if iscompleted {
-                Text(createdAt)
-                    .strikethrough()
-                    .foregroundStyle(Color.tdPrimary.opacity(0.5))
-            } else {
-                Text(createdAt)
+            
+            HStack {
+               
+                if iscompleted {
+                    Text(createdAt)
+                        .strikethrough()
+                        .foregroundStyle(Color.tdPrimary.opacity(0.5))
+                } else {
+                    Text(createdAt)
+                }
+            
             }
             
             
@@ -64,16 +72,19 @@ struct TasklCellView: View {
         .padding(.vertical, 6)
         .listStyle(.plain)
     }
+   
 }
+
+
 
 #Preview {
     
     ZStack{
-        BackgroundViewGradient()
-        TasklCellView(iscompleted: true, title: "Загрузка списка задач из API", descripsion: "https://dummyjson.com/todos. При первом запуске приложение должно загрузить список задач из указанного json api. ", createdAt: "24.09.12", action: {})
+       LocalTaskView()
         
             .listStyle(.plain)
             .preferredColorScheme(.dark)
+            .environmentObject(LocalViewModel())
     }
     
 }

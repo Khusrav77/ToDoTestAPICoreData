@@ -55,34 +55,79 @@ import CoreData
      func fetchTodosFromCoreData() {
          let request: NSFetchRequest<APITaskEntity> = APITaskEntity.fetchRequest()
          do {
-             tasks = try coreDataManager.context.fetch(request)
+             tasks = try coreDataManager.viewContext.fetch(request)
          } catch  {
              print("Error fetching todos from CoreData: \(error)")
          }
      }
      
+     func saveTodosCoreData(tasks: [APIModel]) {
+            let backgroundContext = coreDataManager.backgroundContext
+            
+            backgroundContext.perform {
+                tasks.forEach { task in
+                    let entity = APITaskEntity(context: backgroundContext)
+                    entity.id = Int64(task.id)
+                    entity.todo = task.title
+                    entity.completed = task.completed
+                    entity.userId = Int64(task.userId)
+                }
+                
+                do {
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        self.fetchTodosFromCoreData()
+                    }
+                } catch {
+                    print("Error saving todos to CoreData: \(error)")
+                }
+            }
+        }
+        
+        func deleteTask(at offsets: IndexSet) {
+            let backgroundContext = coreDataManager.backgroundContext
+            
+            backgroundContext.perform {
+                offsets.forEach { index in
+                    let task = self.tasks[index]
+                    if let objectId = task.objectID as? NSManagedObjectID {
+                        let objectToDelete = backgroundContext.object(with: objectId)
+                        backgroundContext.delete(objectToDelete)
+                    }
+                }
+                
+                do {
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        self.fetchTodosFromCoreData()
+                    }
+                } catch {
+                    print("Error deleting todos from CoreData: \(error)")
+                }
+            }
+        }
      
-     func saveTodosCoreData(tasks: [APIModel]){
-         tasks.forEach { task in
-             let entity = APITaskEntity(context: coreDataManager.context)
-             entity.id = Int64(task.id)
-             entity.todo = task.title
-             entity.completed = task.completed
-             entity.userId = Int64(task.userId)
-         }
-         
-         coreDataManager.saveContext()
-         fetchTodosFromCoreData()
-     }
-     
-     func deleteTask(at offsets: IndexSet) {
-         offsets.forEach { index in
-             let task = tasks[index]
-             coreDataManager.context.delete(task)
-         }
-         coreDataManager.saveContext()
-         fetchTodosFromCoreData()
-     }
+//     func saveTodosCoreData(tasks: [APIModel]){
+//         tasks.forEach { task in
+//             let entity = APITaskEntity(context: coreDataManager.viewContext)
+//             entity.id = Int64(task.id)
+//             entity.todo = task.title
+//             entity.completed = task.completed
+//             entity.userId = Int64(task.userId)
+//         }
+//         
+//         coreDataManager.saveContext()
+//         fetchTodosFromCoreData()
+//     }
+//     
+//     func deleteTask(at offsets: IndexSet) {
+//         offsets.forEach { index in
+//             let task = tasks[index]
+//             coreDataManager.viewContext.delete(task)
+//         }
+//         coreDataManager.saveContext()
+//         fetchTodosFromCoreData()
+//     }
      
      
 }

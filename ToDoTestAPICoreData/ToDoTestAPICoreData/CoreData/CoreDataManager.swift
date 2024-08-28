@@ -9,22 +9,28 @@ import Foundation
 import CoreData
 
 
- final class CoreDataManager {
+final class CoreDataManager {
+    
     static let shared = CoreDataManager()
     
+    private let persistentContainer: NSPersistentContainer
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "TodoDataModel")
-        container.loadPersistentStores { storeDescription, error in
+    var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
+    var backgroundContext: NSManagedObjectContext {
+        return persistentContainer.newBackgroundContext()
+    }
+    
+    private init() {
+        persistentContainer = NSPersistentContainer(name: "TodoDataModel")
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+        persistentContainer.loadPersistentStores {storeDescription, error  in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("DEBUG: Unresolved error \(error.localizedDescription), \(error.userInfo)")
             }
         }
-        return container
-    }()
-    
-    var context: NSManagedObjectContext {
-        return persistentContainer.viewContext
     }
     
     func saveContext() {
@@ -38,6 +44,4 @@ import CoreData
             }
         }
     }
-     
-     
 }
