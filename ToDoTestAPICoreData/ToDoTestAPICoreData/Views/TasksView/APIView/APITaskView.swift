@@ -34,7 +34,7 @@ struct APITaskView: View {
                 }
                 .listStyle(.plain)
             }
-            .navigationTitle("Todos")
+            .navigationTitle("APITodos")
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoTaskView: View {
+    let action: () -> Void
     var body: some View {
         VStack{
             
@@ -23,7 +24,10 @@ struct NoTaskView: View {
             Spacer()
             
             // MARK: - Button
-            NavigationLink(destination: AddTaskView()) {
+           
+            Button {
+                action()
+            } label: {
                 ZStack{
                     Circle()
                         .frame(width: 100)
@@ -33,14 +37,16 @@ struct NoTaskView: View {
                     Image(systemName: "plus")
                         .font(.largeTitle)
                         .foregroundStyle(Color.tdBackground2)
-                    
-                }
+                
             }
-            .padding(.bottom)
+                
+            }
+              
+            
         }
     }
 }
     #Preview {
-        NoTaskView()
+        NoTaskView(action: {})
             .preferredColorScheme(.dark)
     }

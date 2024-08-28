@@ -9,47 +9,57 @@ import Foundation
 import CoreData
 
 class LocalViewModel: ObservableObject {
+    @Published var isselectedTask: LocalTaskEntity?
     @Published var tasks: [LocalTaskEntity] = []
-    @Published var newTask = ""
+   
+    
+    @Published var iscompleted: Bool = false
+    @Published var title: String = ""
+    @Published var descripsion: String = ""
+    @Published var createdAt: Date = Date()
+   
+    
     private var coreDataManager = CoreDataManager.shared
     
+    
     init() {
-        fetchTaskItemFromCoreData()
+       
+        
+        fetchTasks()
     }
     
-    func fetchTaskItemFromCoreData () {
+    func fetchTasks () {
         let request: NSFetchRequest<LocalTaskEntity> = LocalTaskEntity.fetchRequest()
         do {
-            tasks = try coreDataManager.context.fetch(request)
+            tasks = try coreDataManager.viewContext.fetch(request)
         } catch {
             print("Error fetching todos from CoreData: \(error)")
         }
     }
     
     func isCompetedTask(task: LocalTaskEntity) {
-        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
-            tasks[index].iscompleted.toggle()
+        task.iscompleted.toggle()
             saveContext()
-        }
     }
 
     
     // MARK:  Create
-    func addTask(title: String) {
-            let newTask = LocalTaskEntity(context: coreDataManager.context)
+    func addNewTask() {
+            let newTask = LocalTaskEntity(context: coreDataManager.viewContext)
             newTask.id = UUID()
             newTask.title = title
-            newTask.iscompleted = false
-            newTask.createdAt = Date()
-            
-            tasks.append(newTask)
-            saveContext()
-        }
+            newTask.descripsion = descripsion
+            newTask.iscompleted = iscompleted
+            newTask.createdAt = createdAt
+        
+        saveContext()
+        fetchTasks()
+    }
     
     // MARK: Save
     func saveContext() {
             do {
-                try coreDataManager.context.save()
+                try coreDataManager.viewContext.save()
             } catch {
                 print("Error saving context: \(error)")
             }
@@ -67,11 +77,19 @@ class LocalViewModel: ObservableObject {
     func deleteTask(at offsets: IndexSet) {
             offsets.forEach { index in
                 let task = tasks[index]
-                coreDataManager.context.delete(task)
+                coreDataManager.viewContext.delete(task)
             }
             tasks.remove(atOffsets: offsets)
             saveContext()
         }
+    
+      let taskDate = Date()
+       
+       var formattedDate: String {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+           return dateFormatter.string(from: taskDate)
+       }
 }
 
 

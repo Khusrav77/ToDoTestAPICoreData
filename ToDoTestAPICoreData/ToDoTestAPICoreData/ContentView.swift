@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        APITaskView()
+        LocalTaskView()
+       
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
+        .environmentObject(LocalViewModel())
 }
