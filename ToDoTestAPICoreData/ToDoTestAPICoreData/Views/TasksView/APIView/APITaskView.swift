@@ -25,9 +25,7 @@ struct APITaskView: View {
                     } else {
                         List {
                             ForEach(vm.tasks, id: \.id) { task in
-                                TasklCellView(iscompleted: task.completed, title: ("userId: \(task.userId)"), descripsion: task.todo ?? "", createdAt: "") {
-                                    
-                                }
+                                APICellView(task: task)
                             }
                         }
                     }

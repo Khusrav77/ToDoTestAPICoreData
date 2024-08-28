@@ -28,33 +28,30 @@ struct LocalTaskView: View {
                         
                         List{
                             ForEach(vm.tasks, id: \.id ) { task in
-                                TasklCellView(
-                                    iscompleted: task.iscompleted,
-                                    title: task.title ?? "",
-                                    descripsion: task.descripsion ?? "",
-                                    createdAt: formatDate(task.createdAt ?? Date())) {
-                                        vm.isCompetedTask(task: task)
-                                    }
-                                    .onTapGesture {
-                                        vm.isselectedTask = task
-                                        isEditViewPresented.toggle()
-                                    }
+                                TasklCellView(task: task) {
+                                    vm.isCompetedTask(task: task)
                                 }
-                                .onDelete(perform: vm.deleteTask(at:))
-                            
-                                .sheet(isPresented: $isEditViewPresented, content: {
-                                    if let taskToEdit = vm.isselectedTask {
-                                        EditTaskView(task: taskToEdit)
-                                    }
-                                })
-                        
+                                
+                                .onTapGesture {
+                                    vm.isselectedTask = task
+                                    isEditViewPresented.toggle()
+                                }
                             }
+                            .onDelete(perform: vm.deleteTask(at:))
+                            
+                            .sheet(isPresented: $isEditViewPresented, content: {
+                                if let taskToEdit = vm.isselectedTask {
+                                    EditTaskView(task: taskToEdit)
+                                }
+                            })
+                            
                         }
-                    
                     }
-                   .listStyle(.plain)
                     
                 }
+                .listStyle(.plain)
+                
+            }
             .navigationTitle("LocalTasks")
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
@@ -64,8 +61,7 @@ struct LocalTaskView: View {
                         Label("FethAPI", systemImage: "network")
                     }
                 }
-            
-            
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showCreate.toggle()
@@ -89,12 +85,6 @@ struct LocalTaskView: View {
             })
         }
     }
-    
-    private func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return dateFormatter.string(from: date)
-    }
 }
 
 
@@ -104,6 +94,6 @@ struct LocalTaskView: View {
             .preferredColorScheme(.dark)
             .environmentObject(LocalViewModel())
     }
-   
+    
     
 }

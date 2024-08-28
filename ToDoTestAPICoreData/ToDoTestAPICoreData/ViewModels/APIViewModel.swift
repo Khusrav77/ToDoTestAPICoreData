@@ -72,7 +72,7 @@ import CoreData
                     entity.completed = task.completed
                     entity.userId = Int64(task.userId)
                 }
-                
+            
                 do {
                     try backgroundContext.save()
                     DispatchQueue.main.async {

@@ -11,6 +11,7 @@
 		A46456302C7D069A008586AD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464562F2C7D069A008586AD /* CustomButton.swift */; };
 		A46456342C7D105A008586AD /* NoTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46456332C7D105A008586AD /* NoTaskView.swift */; };
 		A46AB2872C7F219E00D622CE /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46AB2862C7F219E00D622CE /* EditTaskView.swift */; };
+		A46AB2892C7FAEF400D622CE /* APICellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46AB2882C7FAEF400D622CE /* APICellView.swift */; };
 		A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */; };
 		A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3D02C7B0E5E00610C99 /* ContentView.swift */; };
 		A492E3D32C7B0E5F00610C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A492E3D22C7B0E5F00610C99 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		A464562F2C7D069A008586AD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A46456332C7D105A008586AD /* NoTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTaskView.swift; sourceTree = "<group>"; };
 		A46AB2862C7F219E00D622CE /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		A46AB2882C7FAEF400D622CE /* APICellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICellView.swift; sourceTree = "<group>"; };
 		A492E3CB2C7B0E5E00610C99 /* ToDoTestAPICoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoTestAPICoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTestAPICoreDataApp.swift; sourceTree = "<group>"; };
 		A492E3D02C7B0E5E00610C99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 		A492E3EE2C7B4C9000610C99 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */,
 				A492E3EF2C7B4D1A00610C99 /* BackgroundViewGradient.swift */,
 				A464562F2C7D069A008586AD /* CustomButton.swift */,
 			);
@@ -173,6 +174,7 @@
 		A492E3F22C7B4E9600610C99 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				A46AB2882C7FAEF400D622CE /* APICellView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 		A492E3FD2C7BC34800610C99 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */,
 				A464562D2C7D04D0008586AD /* CreateTaskView.swift */,
 				A46456332C7D105A008586AD /* NoTaskView.swift */,
 				A46AB2862C7F219E00D622CE /* EditTaskView.swift */,
@@ -280,6 +283,7 @@
 				A492E3EA2C7B2DE300610C99 /* APITaskView.swift in Sources */,
 				A492E3E52C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld in Sources */,
 				A492E3F02C7B4D1A00610C99 /* BackgroundViewGradient.swift in Sources */,
+				A46AB2892C7FAEF400D622CE /* APICellView.swift in Sources */,
 				A46456302C7D069A008586AD /* CustomButton.swift in Sources */,
 				A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */,
 				A46456342C7D105A008586AD /* NoTaskView.swift in Sources */,
