@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LocalTaskView: View {
+    // MARK: - Properties
     @State private var showAPI = false
     @State private var showCreate = false
     @State private var isEditViewPresented = false
     @EnvironmentObject var vm: LocalViewModel
     
+    // MARK: - Body
     var body: some View {
         NavigationStack{
             ZStack {
@@ -52,6 +54,7 @@ struct LocalTaskView: View {
                 .listStyle(.plain)
                 
             }
+            // MARK: - Navigation Bar
             .navigationTitle("LocalTasks")
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {

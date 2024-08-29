@@ -9,9 +9,12 @@ import SwiftUI
 import CoreData
 
 struct TasklCellView: View {
+    
+    // MARK: - Properties
     var task: LocalTaskEntity
     let action: () -> Void
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             if task.iscompleted {
@@ -70,6 +73,7 @@ struct TasklCellView: View {
         .listStyle(.plain)
     }
     
+    // MARK: - Mthode
     private func formatDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"

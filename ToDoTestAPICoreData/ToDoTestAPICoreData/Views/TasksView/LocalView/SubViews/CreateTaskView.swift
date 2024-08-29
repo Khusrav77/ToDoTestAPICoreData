@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CreateTaskView: View {
+    
+    // MARK: - Properties
     @EnvironmentObject var vm: LocalViewModel
     @Environment(\.dismiss) var dismiss
+    
+    // MARK: - Body
     var body: some View {
         
         ZStack {

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct APICellView: View {
+    
+    // MARK: - Properties
     var task: APITaskEntity
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             if task.completed {

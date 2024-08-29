@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct APITaskView: View {
-    @ObservedObject var vm = APIViewModel()
     
+    // MARK: - Properties
+    @ObservedObject var vm = APIViewModel()
+   
+    // MARK: - Body
     var body: some View {
         NavigationView {
             

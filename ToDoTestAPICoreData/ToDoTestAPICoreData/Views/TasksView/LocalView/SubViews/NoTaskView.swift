@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct NoTaskView: View {
+    
+    // MARK: - Properties
     let action: () -> Void
+    
+    // MARK: - Body
     var body: some View {
         VStack{
             
@@ -24,7 +28,6 @@ struct NoTaskView: View {
             Spacer()
             
             // MARK: - Button
-           
             Button {
                 action()
             } label: {
@@ -37,16 +40,13 @@ struct NoTaskView: View {
                     Image(systemName: "plus")
                         .font(.largeTitle)
                         .foregroundStyle(Color.tdBackground2)
-                
+                    
+                }
             }
-                
-            }
-              
-            
         }
     }
 }
-    #Preview {
-        NoTaskView(action: {})
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+    NoTaskView(action: {})
+        .preferredColorScheme(.dark)
+}

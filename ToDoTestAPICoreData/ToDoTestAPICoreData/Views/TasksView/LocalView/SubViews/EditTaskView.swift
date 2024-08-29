@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct EditTaskView: View {
+    
+    // MARK: - Properties
     var task: LocalTaskEntity
     @EnvironmentObject var vm: LocalViewModel
     @Environment(\.dismiss) private var dismiss
+    
+    // MARK: - Body
     var body: some View {
         VStack{
             

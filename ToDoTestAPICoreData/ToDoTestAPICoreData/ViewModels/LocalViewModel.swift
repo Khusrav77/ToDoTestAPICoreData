@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 
 class LocalViewModel: ObservableObject {
+    
+    // MARK: - Properties
     @Published var isselectedTask: LocalTaskEntity?
     @Published var tasks: [LocalTaskEntity] = []
    
@@ -20,11 +22,12 @@ class LocalViewModel: ObservableObject {
     
     private var coreDataManager = CoreDataManager.shared
     
-    
+    // MARK: - Initializer
     init() {
         fetchTasks()
     }
     
+    // MARK: - Methods
     func fetchTasks () {
         let request: NSFetchRequest<LocalTaskEntity> = LocalTaskEntity.fetchRequest()
         do {

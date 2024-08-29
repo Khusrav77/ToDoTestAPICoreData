@@ -10,15 +10,16 @@ import CoreData
 
  class APIViewModel: ObservableObject {
      
+     // MARK: - Properties
      @Published var tasks: [APITaskEntity] = []
      private var coreDataManager = CoreDataManager.shared
      
-     
+     // MARK: - Initializer
      init() {
          fetchTodosFromCoreData()
      }
     
-     
+     // MARK: - Methods
     func fetchTodosFromAPI() async{
         do {
             let tasks = try await NetworkManager.shared.getTasks()
@@ -41,6 +42,7 @@ import CoreData
          }
      }
      
+     // MARK: Save
      func saveTodosCoreData(tasks: [APIModel]) {
             let backgroundContext = coreDataManager.backgroundContext
             

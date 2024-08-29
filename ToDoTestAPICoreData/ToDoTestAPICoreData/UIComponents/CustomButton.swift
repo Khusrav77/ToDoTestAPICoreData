@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CustomButton: View {
     
+    // MARK: Properties
     @Environment (\.dismiss) private var dismiss
     let titel: String
     let action: () -> ()
     
-    
+    // MARK: Body
     var body: some View {
         Button {
             action()
