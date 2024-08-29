@@ -19,8 +19,8 @@ struct APITaskView: View {
                 VStack {
                     if vm.tasks.isEmpty {
                         ProgressView("Loading Todos...")
-                            .onAppear {
-                                vm.fetchTodosFromAPI()
+                            .task {
+                               await vm.fetchTodosFromAPI()
                             }
                     } else {
                         List {

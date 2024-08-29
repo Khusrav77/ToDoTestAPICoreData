@@ -12,7 +12,6 @@ class LocalViewModel: ObservableObject {
     @Published var isselectedTask: LocalTaskEntity?
     @Published var tasks: [LocalTaskEntity] = []
    
-    
     @Published var iscompleted: Bool = false
     @Published var title: String = ""
     @Published var descripsion: String = ""
@@ -23,8 +22,6 @@ class LocalViewModel: ObservableObject {
     
     
     init() {
-       
-        
         fetchTasks()
     }
     
@@ -35,11 +32,6 @@ class LocalViewModel: ObservableObject {
         } catch {
             print("Error fetching todos from CoreData: \(error)")
         }
-    }
-    
-    func isCompetedTask(task: LocalTaskEntity) {
-        task.iscompleted.toggle()
-            saveContext()
     }
 
     
@@ -83,13 +75,11 @@ class LocalViewModel: ObservableObject {
             saveContext()
         }
     
-      let taskDate = Date()
-       
-       var formattedDate: String {
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-           return dateFormatter.string(from: taskDate)
-       }
+    func isCompetedTask(task: LocalTaskEntity) {
+        task.iscompleted.toggle()
+            saveContext()
+    }
+    
 }
 
 

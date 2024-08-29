@@ -19,38 +19,18 @@ import CoreData
      }
     
      
-    func fetchTodosFromAPI() {
-        guard let url = URL(string: "https://dummyjson.com/todos") else {
-            print("Invalid URL")
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) {[weak self] data, response, error in
-            if let error = error {
-                print("Error fetching todos: \(error)")
-                return
-            }
+    func fetchTodosFromAPI() async{
+        do {
+            let tasks = try await NetworkManager.shared.getTasks()
+            saveTodosCoreData(tasks: tasks.todos)
             
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-            
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("Response String: \(responseString)")
-            }
-            
-            do {
-                let todoResponse = try JSONDecoder().decode(TodoResponse.self, from: data)
-                DispatchQueue.main.async{
-                    self?.saveTodosCoreData(tasks: todoResponse.todos)
-                }
-            } catch {
-                print("Error decoding todos: \(error)")
+        } catch  {
+            if let error = error as? NetworkError {
+                print(error)
             }
         }
-        task.resume()
     }
+       
      
      func fetchTodosFromCoreData() {
          let request: NSFetchRequest<APITaskEntity> = APITaskEntity.fetchRequest()
@@ -67,10 +47,10 @@ import CoreData
             backgroundContext.perform {
                 tasks.forEach { task in
                     let entity = APITaskEntity(context: backgroundContext)
-                    entity.id = Int64(task.id)
+                    entity.id = Int32(task.id)
                     entity.todo = task.title
                     entity.completed = task.completed
-                    entity.userId = Int64(task.userId)
+                    entity.userId = Int32(task.userId)
                 }
             
                 do {
@@ -106,28 +86,4 @@ import CoreData
                 }
             }
         }
-     
-//     func saveTodosCoreData(tasks: [APIModel]){
-//         tasks.forEach { task in
-//             let entity = APITaskEntity(context: coreDataManager.viewContext)
-//             entity.id = Int64(task.id)
-//             entity.todo = task.title
-//             entity.completed = task.completed
-//             entity.userId = Int64(task.userId)
-//         }
-//         
-//         coreDataManager.saveContext()
-//         fetchTodosFromCoreData()
-//     }
-//     
-//     func deleteTask(at offsets: IndexSet) {
-//         offsets.forEach { index in
-//             let task = tasks[index]
-//             coreDataManager.viewContext.delete(task)
-//         }
-//         coreDataManager.saveContext()
-//         fetchTodosFromCoreData()
-//     }
-     
-     
 }

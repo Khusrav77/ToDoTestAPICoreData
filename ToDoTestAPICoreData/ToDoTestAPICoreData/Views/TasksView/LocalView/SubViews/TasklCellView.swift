@@ -69,6 +69,7 @@ struct TasklCellView: View {
         .padding(.vertical, 6)
         .listStyle(.plain)
     }
+    
     private func formatDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -79,7 +80,7 @@ struct TasklCellView: View {
 
 
 #Preview {
-    
+
     ZStack{
        LocalTaskView()
         

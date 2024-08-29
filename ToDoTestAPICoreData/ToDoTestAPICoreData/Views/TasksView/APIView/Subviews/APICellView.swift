@@ -13,12 +13,12 @@ struct APICellView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             if task.completed {
-                Text("id: \(task.id ?? 0)")
+                Text("id: \(task.id)")
                     .strikethrough()
                     .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 Divider()
             } else {
-                Text("id: \(task.id ?? 0)")
+                Text("id: \(task.id)")
                 Divider()
                     .background(.white)
             }
@@ -46,11 +46,11 @@ struct APICellView: View {
             HStack {
                
                 if task.completed {
-                    Text("userId: \(task.userId ?? 0)")
+                    Text("userId: \(task.userId)")
                         .strikethrough()
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
-                    Text("userId: \(task.userId ?? 0)")
+                    Text("userId: \(task.userId)")
                 }
             
             }

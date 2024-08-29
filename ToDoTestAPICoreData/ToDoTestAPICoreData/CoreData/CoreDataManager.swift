@@ -11,6 +11,7 @@ import CoreData
 
 final class CoreDataManager {
     
+    // MARK: - Properties
     static let shared = CoreDataManager()
     
     private let persistentContainer: NSPersistentContainer
@@ -23,6 +24,7 @@ final class CoreDataManager {
         return persistentContainer.newBackgroundContext()
     }
     
+    // MARK: - Initializer
     private init() {
         persistentContainer = NSPersistentContainer(name: "TodoDataModel")
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
@@ -33,6 +35,7 @@ final class CoreDataManager {
         }
     }
     
+    // MARK: - Methods
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
