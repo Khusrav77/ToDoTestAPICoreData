@@ -14,7 +14,6 @@
 		A46AB2892C7FAEF400D622CE /* APICellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46AB2882C7FAEF400D622CE /* APICellView.swift */; };
 		A46AB28C2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46AB28A2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataClass.swift */; };
 		A46AB28D2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46AB28B2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataProperties.swift */; };
-		A476D32A2C81D6ED004FAD51 /* ProgresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476D3292C81D6ED004FAD51 /* ProgresView.swift */; };
 		A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */; };
 		A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3D02C7B0E5E00610C99 /* ContentView.swift */; };
 		A492E3D32C7B0E5F00610C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A492E3D22C7B0E5F00610C99 /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		A46AB2882C7FAEF400D622CE /* APICellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICellView.swift; sourceTree = "<group>"; };
 		A46AB28A2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalTaskEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		A46AB28B2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalTaskEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		A476D3292C81D6ED004FAD51 /* ProgresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgresView.swift; sourceTree = "<group>"; };
 		A492E3CB2C7B0E5E00610C99 /* ToDoTestAPICoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoTestAPICoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTestAPICoreDataApp.swift; sourceTree = "<group>"; };
 		A492E3D02C7B0E5E00610C99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				A464562D2C7D04D0008586AD /* CreateTaskView.swift */,
 				A46456332C7D105A008586AD /* NoTaskView.swift */,
 				A46AB2862C7F219E00D622CE /* EditTaskView.swift */,
-				A476D3292C81D6ED004FAD51 /* ProgresView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				A46456342C7D105A008586AD /* NoTaskView.swift in Sources */,
 				A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */,
 				A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */,
-				A476D32A2C81D6ED004FAD51 /* ProgresView.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
 				A4D98EAC2C80F993001AAA85 /* NetworkManager.swift in Sources */,
 				A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */,
