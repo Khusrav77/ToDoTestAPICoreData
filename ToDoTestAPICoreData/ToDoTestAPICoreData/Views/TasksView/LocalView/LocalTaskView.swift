@@ -20,6 +20,7 @@ struct LocalTaskView: View {
             ZStack {
                 BackgroundViewGradient()
                 VStack{
+                    
                     if vm.tasks .isEmpty {
                         
                         NoTaskView {
@@ -46,10 +47,19 @@ struct LocalTaskView: View {
                             }
                         }
                         
+                        // MARK: Progress View
+                        ProgressView("Completion Task", value: vm.completionProgress)
+                            .font(.headline)
+                            .accentColor(.tdPrimary)
+                            .padding()
+                            .padding(.horizontal)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
                     }
                     
                 }
                 .listStyle(.plain)
+                                       
             }
             
             // MARK: - Navigation Bar

@@ -22,6 +22,13 @@ class LocalViewModel: ObservableObject {
     
     private var coreDataManager = CoreDataManager.shared
     
+    // Progress View Property
+       var completionProgress: Double {
+           let totalTask = tasks.count
+           let comletionTasks = tasks.filter {$0.iscompleted}.count
+           return totalTask > 0 ? Double(comletionTasks) / Double(totalTask) : 0
+       }
+    
     // MARK: - Initializer
     init() {
         fetchTasks()
