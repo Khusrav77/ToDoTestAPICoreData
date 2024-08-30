@@ -70,6 +70,7 @@ struct LocalTaskView: View {
                         showAPI.toggle()
                     }label: {
                         Label("FethAPI", systemImage: "network")
+                            .foregroundStyle(Color.tdAccent)
                     }
                 }
                 
@@ -78,6 +79,7 @@ struct LocalTaskView: View {
                         showCreate.toggle()
                     }label: {
                         Label("Add Item", systemImage: "plus")
+                            .foregroundStyle(Color.tdAccent)
                     }
                 }
             }

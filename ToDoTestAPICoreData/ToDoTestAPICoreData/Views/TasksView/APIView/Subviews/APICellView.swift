@@ -33,6 +33,7 @@ struct APICellView: View {
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text(task.todo ?? "")
+                        .foregroundStyle(Color.tdPrimary.opacity(0.8))
                 }
                
                 Spacer()
@@ -54,6 +55,7 @@ struct APICellView: View {
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text("userId: \(task.userId)")
+                        .foregroundStyle(Color.tdPrimary.opacity(0.6))
                 }
             
             }
