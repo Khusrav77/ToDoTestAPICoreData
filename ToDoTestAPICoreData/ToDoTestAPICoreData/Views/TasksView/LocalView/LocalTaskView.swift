@@ -33,27 +33,25 @@ struct LocalTaskView: View {
                                 TasklCellView(task: task) {
                                     vm.isCompetedTask(task: task)
                                 }
-                                
                                 .onTapGesture {
                                     vm.isselectedTask = task
-                                    isEditViewPresented.toggle()
+                                    isEditViewPresented = true
                                 }
                             }
                             .onDelete(perform: vm.deleteTask(at:))
-                            
-                            .sheet(isPresented: $isEditViewPresented, content: {
+                            .sheet(isPresented: $isEditViewPresented) {
                                 if let taskToEdit = vm.isselectedTask {
-                                    EditTaskView(task: taskToEdit)
+                                    EditTaskView(task:taskToEdit)
                                 }
-                            })
-                            
+                            }
                         }
+                        
                     }
                     
                 }
                 .listStyle(.plain)
-                
             }
+            
             // MARK: - Navigation Bar
             .navigationTitle("LocalTasks")
             .toolbar{

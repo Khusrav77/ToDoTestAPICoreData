@@ -47,8 +47,9 @@ class LocalViewModel: ObservableObject {
             newTask.iscompleted = iscompleted
             newTask.createdAt = createdAt
         
+        tasks.append(newTask)
         saveContext()
-        fetchTasks()
+        
     }
     
     // MARK: Save
@@ -78,9 +79,12 @@ class LocalViewModel: ObservableObject {
             saveContext()
         }
     
-    func isCompetedTask(task: LocalTaskEntity) {
-        task.iscompleted.toggle()
+    func isCompetedTask(task: LocalTaskEntity ) {
+        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            tasks[index].iscompleted.toggle()
             saveContext()
+            fetchTasks()
+        }
     }
     
 }

@@ -46,6 +46,7 @@ struct TasklCellView: View {
                         .foregroundStyle(Color.tdAccent)
                     
                 }
+                .buttonStyle(.borderless)
             }
             
             HStack {
