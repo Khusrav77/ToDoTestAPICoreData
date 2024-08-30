@@ -24,8 +24,7 @@ struct TasklCellView: View {
                 Divider()
             } else {
                 Text(task.title ?? "")
-                Divider()
-                    .background(.white)
+                    
             }
             
             HStack {
@@ -35,6 +34,7 @@ struct TasklCellView: View {
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text(task.descripsion ?? "")
+                        .foregroundStyle(Color.tdPrimary.opacity(0.8))
                 }
                
                 Spacer()
@@ -57,10 +57,11 @@ struct TasklCellView: View {
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text(formatDate(task.createdAt ?? Date()))
+                        .foregroundStyle(Color.tdPrimary.opacity(0.6))
+    
                 }
             
             }
-            
             
         }
         .font(.headline)
