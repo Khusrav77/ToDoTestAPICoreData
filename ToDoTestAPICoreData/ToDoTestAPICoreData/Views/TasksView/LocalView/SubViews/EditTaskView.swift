@@ -10,9 +10,14 @@ import SwiftUI
 struct EditTaskView: View {
     
     // MARK: - Properties
+    @State private var title: String = ""
+    @State private var description: String = ""
     var task: LocalTaskEntity
     @EnvironmentObject var vm: LocalViewModel
     @Environment(\.dismiss) private var dismiss
+    
+    
+      
     
     // MARK: - Body
     var body: some View {
@@ -39,13 +44,13 @@ struct EditTaskView: View {
             }
             
             // MARK: TextField
-            TextField("Title", text: $vm.title)
+            TextField("Title", text: $title)
                 .font(.headline)
                 .padding()
                 .background(Color.tdPrimary.opacity(0.15))
                 .clipShape(RoundedRectangle(cornerRadius: 15))
             
-            TextField("descripsion", text: $vm.descripsion)
+            TextField("descripsion", text: $description)
                 .font(.headline)
                 .padding()
                 .background(Color.tdPrimary.opacity(0.15))
@@ -53,7 +58,7 @@ struct EditTaskView: View {
             
             // MARK: Button Save
             CustomButton(titel: "Save") {
-                vm.updateTask(id: task.id ?? UUID(), title: task.title ?? "")
+                vm.updateTask(task: task, title: title, description: description)
             }
             .padding(.top)
             Spacer()
@@ -61,12 +66,14 @@ struct EditTaskView: View {
         .padding(.horizontal)
         .background(BackgroundViewGradient())
         .onAppear {
-            
+            title = vm.isselectedTask?.title ?? ""
+            description = vm.isselectedTask?.descripsion ?? ""
         }
     }
 }
 
 #Preview {
+    
     EditTaskView(task: LocalTaskEntity())
         .preferredColorScheme(.dark)
         .environmentObject(LocalViewModel())

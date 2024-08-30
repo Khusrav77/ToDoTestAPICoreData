@@ -69,12 +69,12 @@ class LocalViewModel: ObservableObject {
         }
      
     // MARK: Update
-    func updateTask(id: UUID, title: String) {
-            if let index = tasks.firstIndex(where: { $0.id == id }) {
-                tasks[index].title = title
-                saveContext()
-            }
-        }
+    func updateTask(task: LocalTaskEntity, title: String, description: String) {
+        task.title = title
+        task.descripsion = description
+        saveContext()
+        fetchTasks()
+    }
     
     // MARK:  Delete
     func deleteTask(at offsets: IndexSet) {

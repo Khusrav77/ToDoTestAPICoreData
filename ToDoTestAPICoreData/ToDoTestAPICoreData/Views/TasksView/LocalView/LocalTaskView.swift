@@ -38,13 +38,13 @@ struct LocalTaskView: View {
                                     vm.isselectedTask = task
                                     isEditViewPresented = true
                                 }
-                            }
-                            .onDelete(perform: vm.deleteTask(at:))
-                            .sheet(isPresented: $isEditViewPresented) {
-                                if let taskToEdit = vm.isselectedTask {
-                                    EditTaskView(task:taskToEdit)
+                                .sheet(isPresented: $isEditViewPresented) {
+                                    if let taskToEdit = vm.isselectedTask {
+                                        EditTaskView(task:taskToEdit)
+                                    }
                                 }
                             }
+                            .onDelete(perform: vm.deleteTask(at:))
                         }
                         
                         // MARK: Progress View
