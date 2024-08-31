@@ -101,6 +101,7 @@
 				A492E3E82C7B2DAB00610C99 /* Views */,
 				A492E3DF2C7B135A00610C99 /* ViewModels */,
 				A492E3DC2C7B0FDC00610C99 /* Models */,
+				A46456272C7CAF0A008586AD /* APIService */,
 				A492E3E22C7B1F6200610C99 /* CoreData */,
 				A492E3EE2C7B4C9000610C99 /* UIComponents */,
 				A492E3EB2C7B439200610C99 /* Extensions */,
@@ -144,7 +145,6 @@
 			children = (
 				A492E3E62C7B214C00610C99 /* CoreDataManager.swift */,
 				A492E3E32C7B1FCC00610C99 /* TodoDataModel.xcdatamodeld */,
-				A46456272C7CAF0A008586AD /* APIService */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";

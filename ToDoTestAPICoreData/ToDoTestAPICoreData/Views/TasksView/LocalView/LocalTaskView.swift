@@ -70,8 +70,8 @@ struct LocalTaskView: View {
                         showAPI.toggle()
                     }label: {
                         Label("FethAPI", systemImage: "network")
-                            .foregroundStyle(Color.tdAccent)
                     }
+                    .tint(Color.tdAccent)
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -79,8 +79,9 @@ struct LocalTaskView: View {
                         showCreate.toggle()
                     }label: {
                         Label("Add Item", systemImage: "plus")
-                            .foregroundStyle(Color.tdAccent)
+                            
                     }
+                    .tint(Color.tdPrimary)
                 }
             }
             .sheet(isPresented: $showCreate,  content: {

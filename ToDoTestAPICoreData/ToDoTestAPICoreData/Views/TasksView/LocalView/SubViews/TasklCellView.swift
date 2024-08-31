@@ -19,22 +19,27 @@ struct TasklCellView: View {
         VStack(alignment: .leading, spacing: 6) {
             if task.iscompleted {
                 Text(task.title ?? "")
+                    .font(.headline)
                     .strikethrough()
                     .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 Divider()
             } else {
                 Text(task.title ?? "")
+                    .font(.headline)
+                    .foregroundStyle(Color.tdPrimary)
                     
             }
             
             HStack {
                 if task.iscompleted {
                     Text(task.descripsion ?? "")
+                        .font(.subheadline)
                         .strikethrough()
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text(task.descripsion ?? "")
-                        .foregroundStyle(Color.tdPrimary.opacity(0.8))
+                        .font(.subheadline)
+                        .foregroundStyle(Color.tdPrimary)
                 }
                
                 Spacer()
@@ -53,11 +58,13 @@ struct TasklCellView: View {
                
                 if task.iscompleted {
                     Text(formatDate(task.createdAt ?? Date()))
+                        .font(.subheadline)
                         .strikethrough()
                         .foregroundStyle(Color.tdPrimary.opacity(0.5))
                 } else {
                     Text(formatDate(task.createdAt ?? Date()))
-                        .foregroundStyle(Color.tdPrimary.opacity(0.6))
+                        .font(.subheadline)
+                        .foregroundStyle(Color.tdPrimary.opacity(0.8))
     
                 }
             
