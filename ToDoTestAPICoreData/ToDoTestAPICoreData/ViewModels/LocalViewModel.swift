@@ -56,8 +56,18 @@ class LocalViewModel: ObservableObject {
         
         tasks.append(newTask)
         saveContext()
+        resetFields()
         
     }
+    
+    // MARK:  ResetFields
+    func resetFields() {
+        self.title = ""
+        self.descripsion = ""
+        self.iscompleted = false
+        self.createdAt = Date()
+    }
+
     
     // MARK: Save
     func saveContext() {
