@@ -28,6 +28,9 @@
 		A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F72C7B989500610C99 /* LocalViewModel.swift */; };
 		A492E3FA2C7BBA9700610C99 /* LocalTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3F92C7BBA9700610C99 /* LocalTaskView.swift */; };
 		A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */; };
+		A4BBFA892C846F7500609897 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBFA882C846F7500609897 /* CustomProgressView.swift */; };
+		A4BBFA8B2C84704700609897 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBFA8A2C84704700609897 /* LaunchScreen.swift */; };
+		A4BBFA8D2C84724300609897 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBFA8C2C84724300609897 /* ContainerView.swift */; };
 		A4D98EAC2C80F993001AAA85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D98EAB2C80F993001AAA85 /* NetworkManager.swift */; };
 		A4D98EAE2C810604001AAA85 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D98EAD2C810604001AAA85 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,9 @@
 		A492E3F72C7B989500610C99 /* LocalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewModel.swift; sourceTree = "<group>"; };
 		A492E3F92C7BBA9700610C99 /* LocalTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskView.swift; sourceTree = "<group>"; };
 		A492E3FE2C7BC3D900610C99 /* TasklCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasklCellView.swift; sourceTree = "<group>"; };
+		A4BBFA882C846F7500609897 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		A4BBFA8A2C84704700609897 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		A4BBFA8C2C84724300609897 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		A4D98EAB2C80F993001AAA85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A4D98EAD2C810604001AAA85 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +112,6 @@
 				A492E3EE2C7B4C9000610C99 /* UIComponents */,
 				A492E3EB2C7B439200610C99 /* Extensions */,
 				A492E3CE2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift */,
-				A492E3D02C7B0E5E00610C99 /* ContentView.swift */,
 				A492E3D22C7B0E5F00610C99 /* Assets.xcassets */,
 				A492E3D42C7B0E5F00610C99 /* Preview Content */,
 			);
@@ -152,7 +157,9 @@
 		A492E3E82C7B2DAB00610C99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3F12C7B4E4900610C99 /* TasksView */,
+				A492E3FC2C7BC32E00610C99 /* LocalView */,
+				A492E3FB2C7BC2D100610C99 /* APIView */,
+				A492E3F12C7B4E4900610C99 /* LaunchScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,13 +181,15 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		A492E3F12C7B4E4900610C99 /* TasksView */ = {
+		A492E3F12C7B4E4900610C99 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3FC2C7BC32E00610C99 /* LocalView */,
-				A492E3FB2C7BC2D100610C99 /* APIView */,
+				A492E3D02C7B0E5E00610C99 /* ContentView.swift */,
+				A4BBFA8A2C84704700609897 /* LaunchScreen.swift */,
+				A4BBFA882C846F7500609897 /* CustomProgressView.swift */,
+				A4BBFA8C2C84724300609897 /* ContainerView.swift */,
 			);
-			path = TasksView;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		A492E3F22C7B4E9600610C99 /* Subviews */ = {
@@ -298,9 +307,11 @@
 				A46AB2892C7FAEF400D622CE /* APICellView.swift in Sources */,
 				A46456302C7D069A008586AD /* CustomButton.swift in Sources */,
 				A492E3DE2C7B102400610C99 /* APIModel.swift in Sources */,
+				A4BBFA892C846F7500609897 /* CustomProgressView.swift in Sources */,
 				A46456342C7D105A008586AD /* NoTaskView.swift in Sources */,
 				A492E3F82C7B989500610C99 /* LocalViewModel.swift in Sources */,
 				A492E3FF2C7BC3D900610C99 /* TasklCellView.swift in Sources */,
+				A4BBFA8B2C84704700609897 /* LaunchScreen.swift in Sources */,
 				A492E3D12C7B0E5E00610C99 /* ContentView.swift in Sources */,
 				A4D98EAC2C80F993001AAA85 /* NetworkManager.swift in Sources */,
 				A492E3CF2C7B0E5E00610C99 /* ToDoTestAPICoreDataApp.swift in Sources */,
@@ -308,6 +319,7 @@
 				A4D98EAE2C810604001AAA85 /* NetworkError.swift in Sources */,
 				A46AB28C2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataClass.swift in Sources */,
 				A46AB28D2C7FB5AC00D622CE /* LocalTaskEntity+CoreDataProperties.swift in Sources */,
+				A4BBFA8D2C84724300609897 /* ContainerView.swift in Sources */,
 				A492E3ED2C7B43F700610C99 /* Color+Extension.swift in Sources */,
 				A492E3FA2C7BBA9700610C99 /* LocalTaskView.swift in Sources */,
 				A464562E2C7D04D0008586AD /* CreateTaskView.swift in Sources */,
