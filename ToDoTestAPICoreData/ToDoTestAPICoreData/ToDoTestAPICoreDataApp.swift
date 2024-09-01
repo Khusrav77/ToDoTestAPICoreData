@@ -16,7 +16,7 @@ struct ToDoTestAPICoreDataApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContainerView()
                 .preferredColorScheme(isDarkMode ? .dark : .light)
                 .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
                 .environmentObject(vm)
