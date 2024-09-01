@@ -184,8 +184,8 @@
 		A492E3F12C7B4E4900610C99 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A492E3D02C7B0E5E00610C99 /* ContentView.swift */,
 				A4BBFA8A2C84704700609897 /* LaunchScreen.swift */,
+				A492E3D02C7B0E5E00610C99 /* ContentView.swift */,
 				A4BBFA882C846F7500609897 /* CustomProgressView.swift */,
 				A4BBFA8C2C84724300609897 /* ContainerView.swift */,
 			);
